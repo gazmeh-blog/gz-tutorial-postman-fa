@@ -1,6 +1,6 @@
 {
-  "title":"the title of the article",
-  "desc":"a short description of the article",
-  "tags":["tag1", "tag2"],
-  "author":"author name"
+  "title":"شروع کار با Postman در تست API",
+  "desc":"Postman یک ابزار قدرتمند تست API است که امکان تست API ها را بصورت خودکار فراهم می کند. در ابتدا Postman یک افزونه Chrome بود، اما قدرتمندتر شده و به یک برنامه دسکتاپ کامل تبدیل شده است.",
+  "tags":["پست‌من", "خودکارسازی"],
+  "author":"بهار عربی"
 }
