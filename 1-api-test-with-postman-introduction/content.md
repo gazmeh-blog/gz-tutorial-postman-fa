@@ -39,10 +39,10 @@ Postman برای تست، building blockهای مختلفی را فراهم نم
 پیش از ایجاد یک Request نیاز است که یک collection ساخته شود. هر collection مانند پوشه ای است که درخواست‌های مختلف را دسته بندی میکند.
 به دو طریق می توانید یک Collection جدید ایجاد کنید:
     
-* با کلیک بر روی Collection در بخش building block 
-* استفاده از گزینه New Collection در سمت چپ صفحه
+- با کلیک بر روی Collection در بخش building block 
+- استفاده از گزینه New Collection در سمت چپ صفحه
     
-  عکس
+عکس
     
 سپس در قسمت Name نام مورد نظر خود را نوشته و آن را ایجاد کنید.
     
