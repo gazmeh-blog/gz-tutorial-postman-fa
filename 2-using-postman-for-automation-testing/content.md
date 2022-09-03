@@ -20,35 +20,53 @@
 ### مدیریت متغیرها در Environment
 یک Environment مجموعه‌ای از متغیرها می‌باشد که میتوان در درخواست‌های مختلف از آن استفاده کرد. شما می‌توانید از Environment برای دسته‌بندی کردن متغیرهای مرتبط استفاده کنید. برای مثال میتوان Environment متفاوتی برای پروژه‌های مختلف و یا برای محیط‌های اجرایی مختلف (محیط تست، محیط عملیاتی) ایجاد نمود. مانند شکل زیر مقدار متغیر  URL را میتوان به عنوان یک متغیر تعریف نموده و در همه‌ی درخواست‌ها با استفاده از کاراکتر `{{variable_name}}` استفاده کرد.
 
-عکس
+![Create Environment](./resources/create-env.png?raw=true "Create Environment")
+
+![Use Environment Variables](./resources/use-env-variable.png?raw=true "Use Environment Variables")
+
 ### مدیریت متغیر‌ها در Collection
-در هر collection نیز میتوان متغیرهای متفاوتی تعریف کرد. با این تفاوت که متغیرهای هر collection فقط در همان collection در دسترس هستند، اما متغیرهای موجود در Environment در چند Collection قابل استفاده هستند  با کلیک راست بر روی collection مورد نظر و انتخاب گزینه Edit در تب variables میتوان متغیرهای مورد نیاز را تعریف نمود.
-عکس
+در هر collection نیز میتوان متغیرهای متفاوتی تعریف کرد. با این تفاوت که متغیرهای هر collection فقط در همان collection در دسترس هستند، اما متغیرهای موجود در Environment در چند Collection قابل استفاده هستند. با انتخاب collection مورد نظر و انتخاب گزینه Edit در تب variables میتوان متغیرهای مورد نیاز را تعریف نمود.
+
+![Collection Variables](./resources/collection-variables.png?raw=true "Collection Variables")
+
 ## اشتراک متغیرها بین درخواست‌ها
 در Postman این امکان به شما داده میشود اسکریپت‌هایی نوشته شود که قبل و بعد از ارسال یک درخواست اجرا شوند. به کمک این اسکریپت‌ها میتوان مقادیری را از پاسخ یک درخواست استخراج کرده و در یک متغیر ذخیره نمایید و پس از آن می‌توانید از این متغیر در درخواست‌های بعدی استفاده کنید.
-در بخش زیر فرایند استخراج مقدار از پاسخ یک درخواست، ذخیره آن در متغیر و استفاده آن در درخواست‌های بعدی توضیح داده شده است.
+در بخش زیر فرایند استخراج مقدار از پاسخ یک درخواست، ذخیره آن در متغیر و استفاده آن در درخواست‌های بعدی توضیح داده شده‌است.
 
 ### مثال: دریافت اطلاعات کامل یک آگهی از سایت دیوار
 در این مثال سعی داریم درخواست دریافت لیست آگهی‌های مربوط به خودرو را در سایت دیوار اجرا کرده و از پاسخ آن شناسه یکی از آگهی‌ها را استخراج کنیم و در یک متغیر ذخیره نماییم. سپس API مربوط به درخواست دریافت اطلاعات کامل آن آگهی را اجرا کنیم.
 در پاسخ API مربوط به لیست تمامی آگهی خودروهایی که به کاربر نمایش داده میشود، مقداری با عنوان token وجود دارد که مشخص کننده یک آگهی می‌باشد.برای نمایش جزئیات یک آگهی مربوط به خودرو، می‌بایست مقدار token دریافتی را در URL درخواست بعدی قرار دهیم.
-عکس
+
+![Divar Car List API](./resources/divar-car-id-api.png?raw=true "Divar Car List API")
+
+![Divar Select Car API](./resources/divar-select-car-api.png?raw=true "Divar Select Car API")
+
 برای استخراج این مقدار از پاسخ این API کافی است مانند زیر اسکریپت مربوطه را در تب Test اضافه کنیم. این اسکریپت پس از دریافت پاسخ از سمت سرور، اجرا شده و مقدار token را در متغیر car_id ذخیره میکند. 
 ```js
 var jsonData = JSON.parse(responseBody);
 pm.environment.set("car_id", jsonData.web_widgets.post_list[0].data.token);
 ```
-عکس
+![Create Variabel Using Script](./resources/set-variable.png?raw=true "Create Variabel Using Script")
+
 پس از اجرای این API متغیر car_id در متغیرهای بخش Environment ایجاد میشود و شما میتوانید مقدار آن را مشاهده کنید.
-عکس
+
+![Show Created Environment Variable](./resources/show-environment-variable.png?raw=true "Show Created Environment Variable")
+
 در این مرحله میتوانید از متغیر ایجاد شده در هر درخواستی استفاده کنید. 
-عکس
+
+![Use Shared Variable](./resources/use-shared-variable.png?raw=true "Use Shared Variable")
+
 ## اجرای تست توسط Collection Runner
 اجرای تست توسط Collection Runner روشی است که میتوانید تست‌های خود را به صورت اتوماتیک اجرا کنید. Collection Runner شما را قادر می سازد تا درخواستهای یک مجموعه را در یک توالی مشخص اجرا کنید.
 توجه کنید که پیش از اینکه Collection Runner را باز کنید تمام تست‌های خود را ذخیره نمایید تا تغییرات در دسترس باشند. 
 روی آیکون سه نقطه سمت راست collection کلیک کرده و گزینه Run collection را انتخاب کنید.
-عکس
+
+![Select Collection Runner](./resources/collection-runner.png?raw=true "Select Collection Runner")
+
 پس از آن صفحه‌ای مشابه زیر نمایش داده میشود. در این بخش مقادیر مختلفی وجود دارد که میتوانید با تغییر آن ها روند اجرای تست را تغییر دهید.
-عکس
+
+![Collection Runner Setting](./resources/collection-runner-setting.png?raw=true "Collection Runner Setting")
+
 > **<div dir="rtl">Iterations:** این مقدار تعداد دفعات اجرای تست را مشخص میکند.
 > **<div dir="rtl">Delay:** زمان انتظار بین درخواست ها که در واحد میلی ثانیه می‌باشد.
 > **<div dir="rtl">Data:** فایل حاوی اطلاعات استفاده شده در درخواست ها
@@ -60,5 +78,7 @@ pm.environment.set("car_id", jsonData.web_widgets.post_list[0].data.token);
 به صورت پیشفرض درخواست ها به همان ترتیبی که در collection ایجاد شده اند اجرا میشوند. اما به راحتی میتوان با انتخاب آن ها و تغییر محل، ترتیب اجرای آن‌ها را تغییر داد. همچنین میتوان درخواست را از لیست اجرا حذف نمود.
 
 پس از اجرا، نتایج به صورت زیر قابل مشاهده است.
-عکس
+
+  ![Run Tests Using Collection Runner](./resources/run-collection.png?raw=true "Run Tests Using Collection Runner")
+  
 از آن جایی که درستی تست ها چک نشده است در نتیجه اجرا، موفقیت آمیز بودن یا نبودن آن مشخص نشده است.در مقاله های بعدی نحوه نوشتن اسکریپت و بررسی نتیجه را خواهیم دید.
