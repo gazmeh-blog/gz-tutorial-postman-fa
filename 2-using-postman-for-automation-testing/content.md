@@ -42,10 +42,12 @@
 ![Divar Select Car API](./resources/divar-select-car-api.png?raw=true "Divar Select Car API")
 
 برای استخراج این مقدار از پاسخ این API کافی است مانند زیر اسکریپت مربوطه را در تب Test اضافه کنیم. این اسکریپت پس از دریافت پاسخ از سمت سرور، اجرا شده و مقدار token را در متغیر car_id ذخیره میکند. 
-```js
+
+```javascript
 var jsonData = JSON.parse(responseBody);
 pm.environment.set("car_id", jsonData.web_widgets.post_list[0].data.token);
 ```
+
 ![Create Variabel Using Script](./resources/set-variable.png?raw=true "Create Variabel Using Script")
 
 پس از اجرای این API متغیر car_id در متغیرهای بخش Environment ایجاد میشود و شما میتوانید مقدار آن را مشاهده کنید.
