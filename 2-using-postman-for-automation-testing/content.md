@@ -22,6 +22,7 @@
 
 ![Create Environment](./resources/create-env.png?raw=true "Create Environment")
 
+
 ![Use Environment Variables](./resources/use-env-variable.png?raw=true "Use Environment Variables")
 
 ### مدیریت متغیر‌ها در Collection
@@ -38,6 +39,7 @@
 در پاسخ API مربوط به لیست تمامی آگهی خودروهایی که به کاربر نمایش داده میشود، مقداری با عنوان token وجود دارد که مشخص کننده یک آگهی می‌باشد.برای نمایش جزئیات یک آگهی مربوط به خودرو، می‌بایست مقدار token دریافتی را در URL درخواست بعدی قرار دهیم.
 
 ![Divar Car List API](./resources/divar-car-id-api.png?raw=true "Divar Car List API")
+
 
 ![Divar Select Car API](./resources/divar-select-car-api.png?raw=true "Divar Select Car API")
 
