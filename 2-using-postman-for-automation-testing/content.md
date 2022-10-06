@@ -20,10 +20,12 @@
 ### مدیریت متغیرها در Environment
 یک Environment مجموعه‌ای از متغیرها می‌باشد که میتوان در درخواست‌های مختلف از آن استفاده کرد. شما می‌توانید از Environment برای دسته‌بندی کردن متغیرهای مرتبط استفاده کنید. برای مثال میتوان Environment متفاوتی برای پروژه‌های مختلف و یا برای محیط‌های اجرایی مختلف (محیط تست، محیط عملیاتی) ایجاد نمود. مانند شکل زیر مقدار متغیر  URL را میتوان به عنوان یک متغیر تعریف نموده و در همه‌ی درخواست‌ها با استفاده از کاراکتر `{{variable_name}}` استفاده کرد.
 
+
 ![Create Environment](./resources/create-env.png?raw=true "Create Environment")
 
-
+    
 ![Use Environment Variables](./resources/use-env-variable.png?raw=true "Use Environment Variables")
+
 
 ### مدیریت متغیر‌ها در Collection
 در هر collection نیز میتوان متغیرهای متفاوتی تعریف کرد. با این تفاوت که متغیرهای هر collection فقط در همان collection در دسترس هستند، اما متغیرهای موجود در Environment در چند Collection قابل استفاده هستند. با انتخاب collection مورد نظر و انتخاب گزینه Edit در تب variables میتوان متغیرهای مورد نیاز را تعریف نمود.
@@ -41,6 +43,7 @@
 ![Divar Car List API](./resources/divar-car-id-api.png?raw=true "Divar Car List API")
 
 
+   
 ![Divar Select Car API](./resources/divar-select-car-api.png?raw=true "Divar Select Car API")
 
 برای استخراج این مقدار از پاسخ این API کافی است مانند زیر اسکریپت مربوطه را در تب Test اضافه کنیم. این اسکریپت پس از دریافت پاسخ از سمت سرور، اجرا شده و مقدار token را در متغیر car_id ذخیره میکند. 
