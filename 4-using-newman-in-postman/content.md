@@ -14,13 +14,13 @@
 
 
 
-image
+![Node installation Check](./resources/node-check-istallment.png?raw=true "Node installation Check")
 
 
 پس از نصب و پیکربندی NodeJS باید از نصب بودن npm اطمینان حاصل کنیم. npm  یا node package manager بستری برای مدیریت پکیج های جاوااسکریپت است. به عبارت دیگر npm این امکان را به برنامه نویسان می‌دهد که پکیج‌های خود را در اختیار سایر برنامه نویسان قرار دهند و یا از پکیج‌های دیگران استفاده کنند. پس از نصب npm،  NodeJS به صورت خودکار نصب خواهد شد. برای اطمینان از نصب صحیح آن میتوان  دستور npm -v را در ترمینال اجرا نمود.
 
 
-image
+![NPM installation Check](./resources/npm-check-istallment.png?raw=true "NPM installation Check")
 
 ### 2. نصب نیومن با استفاده از npm
 بعد از نصب  NodeJS و npm ، می‌توانیم با استفاده از دستور زیر نیومن را نصب کنیم:
@@ -28,12 +28,12 @@ image
 npm install -g newman
 ```
 
-image
+![Installing Newman](./resources/installing-newman.png?raw=true "Installing Newman")
 
 
 پس از نصب نیومن با استفاده از دستور `newman -v` از موفقیت آمیز بودن فرایند نصب اطمینان حاصل کنید. همان طور که در تصویر زیر مشاهده می‌کنید باید ورژن نیومن نمایش داده شود.
 
-image
+![Newman installation Check](./resources/newman-check-installment.png?raw=true "Newman installation Check")
 
 ## اجرای تست‌ها با استفاده از نیومن 
 ### اجرای مجموعه‌ها توسط نیومن
@@ -42,23 +42,23 @@ image
 ابتدا در پستمن مجموعه‌ای ایجاد کرده و درون آن درخواست مورد نظر را می‌سازیم. 
 
 
-image
+![Create Request](./resources/request.png?raw=true "Create Request")
 
 جهت export گرفتن از مجموعه موجود ابتدا روی سه نقطه کنار آن کلیک کرده و گزینه export را انتخاب نمایید. در صفحه نمایش داده شده دو یا سه گزینه را مشاهده خواهید کرد (بسته به نسخه پستمن شما). برای این آموزش ما از پستمن نسخه 10.11.1 استفاده می‌کنیم. گزینه Collection v2.1 که گزینه پیشنهادی پستمن نیز می‌باشد را انتخاب کرده و روی Export را کلیک کنید.
 
-image
+![Export Collection Step 1](./resources/export-collection1.png?raw=true "Export Collection Step 1")
 
-image
+![Export Collection Step 2](./resources/export-collection2.png?raw=true "Export Collection Step 2")
 
 سپس مسیر مورد نظر خود برای ذخیره فایل JSON را مشخص نموده و آن را ذخیره کنید.
 از آنجایی که در درخواست ایجاد شده از متغیر استفاده کردیم برای اجرای مجموعه توسط نیومن باید از متغیرها نیز export بگیریم. برای export گرفتن از متغیرها طبق مراحل زیر پیش می‌رویم:
 1. روی باتن کنار آن کلیک و گزینه edit را انتخاب می‌کنیم. 
 
-image
+![Export Environment Step 1](./resources/export-environment1.png?raw=true "Export Environment Step 1")
 
 2. سپس باتن سه نقطه را انتخاب کرده و روی گزینه export کلیک می‌کنیم. 
 
-image
+![Export Environment Step 2](./resources/export-environment2.png?raw=true "Export Environment Step 2")
 
 3. مسیر ذخیره سازی آن را مشخص نموده و فایل را ذخیره می‌کنیم.
 پس از ذخیره فایل‌ها در command prompt دایرکتوری جاری را به دایرکتوری که فایل‌های مریوطه را در آن ذخیره کردید تغییر دهید. سپس با استفاده از دستور زیر فایل مربوط به مجموعه را توسط نیومن اجرا نمایید.
@@ -67,18 +67,18 @@ newman run <name of the collection file> -e <name of the environment file>
 newman run "Newman Test Collection.postman_collection.json" -e "Divar Environment.postman_environment.json"  
 ```
 
-image
+![Run Collection Using Newman](./resources/newman-run-collection.png?raw=true "Run Collection Using Newman")
 
 با اجرای دستور بالا نتایج اجرا به صورت زیر در خروجی نمایش داده خواهد شد.
 
-image
+![Newman Result](./resources/newman-result.png?raw=true "Newman Result")
 
 ### اجرای assertion در نیومن
 collection runner نیومن کاملا مشابه postman collection runner در اجرای مجموعه‌ها می‌باشد و از آنجایی که درخواست‌های پستمن می‌توانند حاوی assertionهای متفاوتی باشند، assertionها در زمانی که اجرای درخواست تکمیل می‌شود، ارزیابی شده و خلاصه اجرای آن‌ها در پایان اجرای تست نمایش داده می‌شود. با افزودن تاییدیه زیر به درخواست موجود و اجرای مجدد آن نتیجه تست به صورت زیر می‌باشد.
 
-image
+![Assertion](./resources/assertion.png?raw=true "Assertion")
 
-image
+![Newman Assertion Result](./resources/newman-assertion-result.png?raw=true "Newman Assertion Result")
 
 ### تولید گزارش به وسیله نیومن
 
@@ -88,20 +88,20 @@ image
 npm install -g newman-reporter-html
 ```
 
-image
+![HTML Reporter](./resources/html-reporter.png?raw=true "HTML Reporter")
 
 پس از نصب ماژول مورد نظر با استفاده از دستور زیر می‌توان این گزارش را تولید کرد:
 ```
 newman run <name of the collection file> -e <name of the environment file> -r html
 ```
 
-image
+![HTML Report](./resources/html-report.png?raw=true "HTML Report")
 
 پس از اجرای این دستور فایلی در دایرکتوری جاری ایجاد می‌شود که به صورت زیر است: 
 بخش 1: خلاصه اجرا تست
 بخش 2: جزئیات مربوط به هر درخواست به صورت مجزا
 
-image
+![HTML Result](./resources/html-result.png?raw=true "HTML Result")
 
 
 با تغییر دستور فوق و استفاده از json به جای پارامتر html خروجی به صورت json تولید می‌شود.
